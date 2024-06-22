@@ -83,16 +83,16 @@ const [rows] = await pool.query('SELECT * FROM usuario WHERE email_usuario = ?',
 const user = rows[0];
 
   if (!user) {
- return null; // Não foi possivel encontra o Usuário
+ return null; 
  }
 
- // Verifica se a senha é válida 
+ 
  const match = await bcrypt.compare(senha, user.senha_usuario);
 
   if (match) {
       return user; 
  } else {
- return null; // Senha incorreta
+ return null; 
  }
 } catch (error) {
  throw error; 

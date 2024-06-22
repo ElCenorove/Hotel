@@ -1,7 +1,7 @@
 const tarefasModel = require("../models/models");
 const moment = require("moment");
 const { body, validationResult } = require("express-validator");
-const auth = require('./../auth'); // Modúlo de gerenciamento de autenticação
+const auth = require('./../auth'); 
 
 const TarefasControl = {
 
@@ -75,7 +75,7 @@ return res.render("pages/template-home", {
 }
 
       
- auth.authenticateUser(user.id, user); // Guardas os usuários autenticado
+ auth.authenticateUser(user.id, user); 
 
   res.render("pages/template-home", { pagina: "home", logado: user });
  } catch (error) {
@@ -88,7 +88,7 @@ logado: null
  }
 },
 
-    // Defini as regras para efetuar o Loign de Forma Correta
+    
 regrasValidacaoLogin: [
 body("email").isEmail().withMessage("Email inválido"),
 body("senha").notEmpty().withMessage("Senha não pode estar vazia")
