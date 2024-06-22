@@ -16,8 +16,8 @@ const hashedPassword = await bcrypt.hash(data.senha, saltRounds);
 return linhas;
  } catch (error) {
    throw error; 
-    }
-  },
+   }
+ },
 
 
  findByEmail: async (email) => {
