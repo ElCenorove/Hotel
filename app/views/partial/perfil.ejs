@@ -1,0 +1,48 @@
+﻿
+<style>
+    header {
+        height: 15vmin;
+        min-height: 15vmin;
+    }
+</style>
+<!-- include header -->
+<%- include("../partial/header-home") %>
+<main>
+    <div id="perfil">
+        <form action="perfil" method="post" enctype = "multipart/form-data">
+            <h1>Meu Perfil</h1>
+            <p>
+                <input type="text" name="nome" id="nome" placeholder = "Nome">
+                <b>*</b>
+            </p>
+            <p>
+                <input type="text" name="email" id="email" placeholder = "E-mail">
+                <b>*</b>
+            </p>
+            <p>
+                <input type="text" name="nome-usuario" id="nome-usuario" placeholder = "Nome de Usuario">
+                <b>*</b>
+            </p>
+            <p>
+                <input type="text" name="cpf" id="cpf" placeholder = "CPF">
+                <b>*</b>
+            </p>
+            <p>
+                <input type="file" name="imagem-perfil" id="imagem-perfil" onchange = "loadImg()">
+                <img id="img-preview">               
+            </p>
+            <p>
+                <input type="password" name="senha" id="senha" placeholder="senha de Usuario">
+                <span class="aviso">Não preencha este campo para manter a senha atual</span>
+            </p>
+            <p>
+                <input type="submit" value="Alterar dados perfil" />
+            </p>
+        </form>
+        <h1>Minhas Reservas</h1>
+        <p>Você ainda não possui reservas!</p>
+
+    </div>
+
+
+</main>

@@ -1,0 +1,37 @@
+<header>
+    <% if (logado) { %>
+        <div class='logado'> 
+                <img src='imagem/logo-azul.png' alt='logo da empresa'> 
+                <a href='/Home/Perfil'> 
+                <img src='imagem/img_login.png' alt='silhoueta de perfil de usuário'> 
+                </a>
+                <p>Olá,<br /> Usuário
+                <br><a href='/LogOut'>sair</a></p>
+    <% }else{ %>            
+    <div>
+        <img src='imagem/logo-azul.png' alt='logo da empresa'>
+        <a href='login'>
+            <img src='imagem/img_login.png' alt='silhoueta de perfil de usuário'>
+        </a>
+    <% } %>
+        <nav>
+            <div id="painel-menu">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul>
+                    <li><a href="/quartos">Acomodação</a></li>
+                    <li><a href="">Lazer</a></li>
+                    <li><a href="">Gastronomia</a></li>
+                    <li><a href="">Reservas</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <% if (logado == null) { %>
+    <h1>Venha curtir férias inesquecíveis</h1>
+    <img class="hero" src="imagem/hotel.png" alt="imagem da fachada do Hotel">
+    <% } %>
+</header>

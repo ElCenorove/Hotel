@@ -1,0 +1,59 @@
+﻿
+<style>
+    header {
+        height: 15vmin;
+        min-height: 15vmin;
+        margin-bottom: 0px;
+    }
+    header h1, header img.hero{
+        display: none;
+    }
+    
+
+</style>
+<!-- include header -->
+<%- include("../partial/header-home") %>
+<main>
+    <div class="call-to-action">
+        <h2 class="cta-title">Descubra o conforto que você merece!</h2>
+        <p class="cta-description">Alugue um dos nossos quartos de hotel e desfrute de uma estadia inesquecível. Nossos quartos oferecem:</p>
+        <ul class="cta-advantages">
+            <li>Conforto e comodidade</li>
+            <li>Atendimento personalizado</li>
+            <li>Localização privilegiada</li>
+            <li>Ambiente seguro e acolhedor</li>
+        </ul>
+    </div>
+    <div class="card">
+        <div class="card-image" id="main-image1">
+            <img src="imagem/quartos/quarto_1.png" alt="Hotel Room">
+        </div>
+        <div class="thumbnail-container">
+            <img class="thumbnail" src="imagem/quartos/quarto_1.png" alt="Thumbnail 1" onclick="changeImage(this,'main-image1')">
+            <img class="thumbnail" src="imagem/quartos/quarto_2.png" alt="Thumbnail 2" onclick="changeImage(this,'main-image1')">
+            <img class="thumbnail" src="imagem/quartos/quarto_3.png" alt="Thumbnail 3" onclick="changeImage(this,'main-image1')">
+        </div>
+        <div class="card-content">
+            <h2 class="card-title">Quarto Luxo</h2>
+            <p class="card-description">Espaçoso e confortável quarto de hotel, equipado com cama king-size, TV de tela plana, minibar, ar-condicionado e banheiro privativo.</p>
+            <p class="card-price">Diária a partir de R$ 300,00</p>
+            <a href="#" class="cta-button">Reservar Agora</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-image" id="main-image2">
+            <img src="imagem/quartos/quarto_4.png" alt="Hotel Room">
+        </div>
+        <div class="thumbnail-container">
+            <img class="thumbnail" src="imagem/quartos/quarto_4.png" alt="Thumbnail 1" onclick="changeImage(this,'main-image2')">
+            <img class="thumbnail" src="imagem/quartos/quarto_5.png" alt="Thumbnail 2" onclick="changeImage(this,'main-image2')">
+            <img class="thumbnail" src="imagem/quartos/quarto_6.png" alt="Thumbnail 3" onclick="changeImage(this,'main-image2')">        </div>
+        <div class="card-content">
+            <h2 class="card-title">Quarto Luxo</h2>
+            <p class="card-description">Espaçoso e confortável quarto de hotel, equipado com cama king-size, TV de tela plana, minibar, ar-condicionado e banheiro privativo.</p>
+            <p class="card-price">Diária a partir de R$ 300,00</p>
+            <a href="#" class="cta-button">Reservar Agora</a>
+        </div>
+    </div>
+
+</main>

@@ -1,0 +1,75 @@
+﻿<style>
+    header {
+        height: 15vmin;
+        min-height: 15vmin;
+        margin-bottom: 0px;
+    }
+
+    header h1,
+    header img.hero {
+        display: none;
+    }
+</style>
+<!-- include header -->
+<%- include("../partial/header-home") %>
+    <main>
+        <div class="call-to-action">
+            <h2 class="cta-title">Descubra o conforto que você merece!</h2>
+            <p class="cta-description">Alugue um dos nossos quartos de hotel e desfrute de uma estadia inesquecível.
+                Nossos quartos oferecem:</p>
+            <ul class="cta-advantages">
+                <li>Conforto e comodidade</li>
+                <li>Atendimento personalizado</li>
+                <li>Localização privilegiada</li>
+                <li>Ambiente seguro e acolhedor</li>
+            </ul>
+        </div>
+        <%if(listaTipoQuartos){ 
+            let contador = 1;
+            listaTipoQuartos.forEach(element=> {
+            %>
+            <div class="card">
+                <div class="card-image" id="main-image<%=contador%>">
+                    <img src="<%= element.imagem1 %>" alt="Hotel Room">
+                </div>
+                <div class="thumbnail-container">
+                    <img class="thumbnail" src="<%= element.imagem1 %>" alt="Thumbnail 1"
+                        onclick="changeImage(this,'main-image<%=contador%>')">
+                    <img class="thumbnail" src="<%= element.imagem2 %>" alt="Thumbnail 2"
+                        onclick="changeImage(this,'main-image<%=contador%>')">
+                    <img class="thumbnail" src="<%= element.imagem3 %>" alt="Thumbnail 3"
+                        onclick="changeImage(this,'main-image<%=contador%>')">
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title"><%= element.titulo %></h2>
+                    <p class="card-description"><%= element.descricao %></p>
+                    <p class="card-price">Diária a partir de R$ <%= element.preco %></p>
+                    <a href="#" class="cta-button">Reservar Agora</a>
+                </div>
+            </div>
+            <% 
+            contador++;
+                }); 
+            }%>
+
+            <% if(paginador){ %>
+                <div class="notificador">
+                    <ul>
+                        <% for(var i=1; i <=paginador.total_paginas; i++){ 
+                            if(paginador.pagina_atual==i){ 
+                        %>
+                            <li><a class="atual" href="?pagina=<%= i %>">
+                                    <%= i %>
+                                </a>
+                            </li>
+                            <% } else { %>
+                                <li><a href="?pagina=<%= i %>">
+                                        <%= i %>
+                                    </a>
+                                </li>
+                            <% } 
+                        } %>
+                    </ul>
+                </div>
+            <% } %>
+    </main>
